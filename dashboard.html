@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropout Prediction & Counseling Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #f0f4f8 0%, #e9eafc 100%);
+      margin: 0;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto 32px 260px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #0002;
+      padding: 40px 36px 36px 36px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      color: #1e293b;
+      letter-spacing: 0.5px;
+    }
+    h2 {
+      color: #334155;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      letter-spacing: 0.2px;
+    }
+    .kpi-row {
+      body {
+        font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+        background: linear-gradient(120deg, #e0e7ff 0%, #f3f6fd 100%);
+        margin: 0;
+        color: #1e293b;
+        min-height: 100vh;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px #6366f140;
+        padding: 40px 40px 32px 40px;
+        transition: box-shadow 0.2s;
+      }
+      .container:hover {
+        box-shadow: 0 12px 40px #6366f180;
+      }
+      .kpi-row {
+        display: flex;
+        gap: 32px;
+        margin-bottom: 36px;
+        flex-wrap: wrap;
+      }
+      .kpi {
+        flex: 1;
+        background: linear-gradient(120deg, #f1f5f9 60%, #e0e7ff 100%);
+        border-radius: 16px;
+        padding: 28px 0 20px 0;
+        text-align: center;
+        box-shadow: 0 4px 16px #6366f120;
+        border: 1.5px solid #e0e7ff;
+        min-width: 180px;
+        transition: transform 0.15s, box-shadow 0.15s;
+      }
+      .kpi:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 8px 32px #6366f140;
+      }
+      .kpi .label {
+        font-size: 1.13rem;
+        color: #64748b;
+        margin-bottom: 10px;
+        letter-spacing: 0.2px;
+      }
+      .kpi .value {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-top: 2px;
+        letter-spacing: 0.5px;
+      }
+      background: #f8fafc;
+      font-size: 1rem;
+      color: #334155;
+      outline: none;
+      transition: border 0.2s;
+    }
+    .filters select:focus {
+      border: 1.5px solid #6366f1;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0001;
+      background: #fff;
+      margin-bottom: 24px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 1rem;
+    }
+    th {
+      background: #f1f5f9;
+      text-align: left;
+      font-size: 1.01rem;
+      color: #475569;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+    }
+    tr:hover {
+      background: #f3f6fd;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .risk-high {
+      color: #dc2626;
+      font-weight: bold;
+    }
+    .risk-medium {
+      color: #f59e42;
+      font-weight: bold;
+    }
+    .risk-low {
+      color: #22c55e;
+      font-weight: bold;
+    }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 250px;
+      height: 100vh;
+      background: linear-gradient(120deg, #6366f1 60%, #818cf8 100%);
+      color: #fff;
+      padding: 48px 24px 24px 28px;
+      box-shadow: 2px 0 24px #6366f120;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-top-right-radius: 18px;
+      border-bottom-right-radius: 18px;
+    }
+    .sidebar h2 {
+      font-size: 1.22rem;
+      margin-bottom: 26px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .sidebar label {
+      display: block;
+      margin: 16px 0 7px;
+      font-size: 1.04rem;
+      color: #e0e7ff;
+      font-weight: 500;
+    }
+    .sidebar input, .sidebar select {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 14px;
+      font-size: 1.04rem;
+      color: #334155;
+      background: #f1f5f9;
+      box-shadow: 0 1px 4px #0001;
+    }
+    .download-btn {
+      background: linear-gradient(90deg, #2563eb 60%, #6366f1 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 13px 26px;
+      font-size: 1.08rem;
+      cursor: pointer;
+      margin-top: 22px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px #6366f120;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .download-btn:hover {
+      background: linear-gradient(90deg, #1d4ed8 60%, #6366f1 100%);
+      box-shadow: 0 4px 16px #6366f140;
+    }
+    .student-detail {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin-top: 18px;
+      box-shadow: 0 2px 8px #0001;
+      border: 1px solid #e0e7ef;
+      font-size: 1.08rem;
+      color: #334155;
+    }
+    .student-detail strong {
+      color: #1e293b;
+    }
+    @media (max-width: 900px) {
+      .container { margin: 0; border-radius: 0; box-shadow: none; padding: 12px; }
+      .kpi-row { flex-direction: column; gap: 12px; }
+      .sidebar { position: static; width: 100%; height: auto; padding: 16px; }
+      .container { margin-left: 0; }
+    }
+  </style>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="login-page" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:linear-gradient(120deg,#6366f1 60%,#818cf8 100%);display:flex;align-items:center;justify-content:center;z-index:1000;">
+    <form id="login-form" style="background:#fff;padding:40px 32px 32px 32px;border-radius:18px;box-shadow:0 8px 32px #6366f180;min-width:320px;display:flex;flex-direction:column;align-items:center;">
+      <h2 style="margin-bottom:24px;color:#6366f1;">Dashboard Login</h2>
+      <input type="text" id="login-username" placeholder="Username" required style="margin-bottom:16px;padding:12px 14px;border-radius:8px;border:1px solid #e0e7ff;width:100%;font-size:1.08rem;">
+      <input type="password" id="login-password" placeholder="Password" required style="margin-bottom:20px;padding:12px 14px;border-radius:8px;border:1px solid #e0e7ff;width:100%;font-size:1.08rem;">
+      <button type="submit" class="download-btn" style="width:100%;margin-top:0;">Login</button>
+      <div id="login-error" style="color:#dc2626;margin-top:14px;display:none;font-size:1rem;"></div>
+      <div style="margin-top:18px;font-size:1rem;">New user? <a href="#" id="show-signup" style="color:#6366f1;text-decoration:underline;cursor:pointer;">Sign up</a></div>
+    </form>
+    <form id="signup-form" style="background:#fff;padding:40px 32px 32px 32px;border-radius:18px;box-shadow:0 8px 32px #6366f180;min-width:320px;display:none;flex-direction:column;align-items:center;">
+      <h2 style="margin-bottom:24px;color:#6366f1;">Sign Up</h2>
+      <input type="text" id="signup-username" placeholder="Choose username" required style="margin-bottom:16px;padding:12px 14px;border-radius:8px;border:1px solid #e0e7ff;width:100%;font-size:1.08rem;">
+      <input type="password" id="signup-password" placeholder="Choose password" required style="margin-bottom:20px;padding:12px 14px;border-radius:8px;border:1px solid #e0e7ff;width:100%;font-size:1.08rem;">
+      <button type="submit" class="download-btn" style="width:100%;margin-top:0;">Sign Up</button>
+      <div id="signup-error" style="color:#dc2626;margin-top:14px;display:none;font-size:1rem;"></div>
+      <div style="margin-top:18px;font-size:1rem;">Already have an account? <a href="#" id="show-login" style="color:#6366f1;text-decoration:underline;cursor:pointer;">Login</a></div>
+    </form>
+  </div>
+  <div class="sidebar" id="dashboard-sidebar" style="display:none;">
+    <h2>Filters & Config</h2>
+    <label for="class-filter">Class</label>
+    <select id="class-filter">
+      <option>All</option>
+      <option>9A</option>
+      <option>10A</option>
+      <option>11A</option>
+    </select>
+    <label for="mentor-filter">Mentor</label>
+    <select id="mentor-filter">
+      <option>All</option>
+      <option>Mentor_A</option>
+      <option>Mentor_B</option>
+    </select>
+    <label for="risk-filter">Min Risk</label>
+    <select id="risk-filter">
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+    <button class="download-btn">Download CSV</button>
+  </div>
+  <div class="container" id="dashboard-container" style="margin-left:240px;display:none;">
+    <h1>📊 Drop-out Prediction & Counseling Dashboard</h1>
+    <div style="margin: 32px 0 40px 0;">
+      <h2>Live Dashboard</h2>
+      <iframe src="http://localhost:8501" width="100%" height="700" style="border:none;border-radius:12px;box-shadow:0 2px 8px #0001;"></iframe>
+    </div>
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="label">Total students</div>
+        <div class="value" id="kpi-total">120</div>
+      </div>
+      <div class="kpi">
+        <div class="label">High risk</div>
+        <div class="value risk-high" id="kpi-high">12</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Medium risk</div>
+        <div class="value risk-medium" id="kpi-medium">24</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Low risk</div>
+        <div class="value risk-low" id="kpi-low">84</div>
+      </div>
+    </div>
+    <h2>At-risk students</h2>
+    <div class="filters">
+      <select>
+        <option>All Classes</option>
+        <option>9A</option>
+        <option>10A</option>
+      </select>
+      <select>
+        <option>All Mentors</option>
+        <option>Mentor_A</option>
+        <option>Mentor_B</option>
+      </select>
+      <select>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Mentor</th>
+            <th>Risk Band</th>
+            <th>Score</th>
+            <th>Attendance (%)</th>
+            <th>Avg Score</th>
+            <th>Unpaid</th>
+            <th>Reasons</th>
+          </tr>
+        </thead>
+        <tbody id="students-table-body">
+          <!-- Rows will be inserted here by JS -->
+        </tbody>
+      </table>
+    </div>
+    <h2>Student detail & actions</h2>
+    <div class="student-detail">
+      <strong>Name:</strong> Student_1<br>
+      <strong>ID:</strong> S1001<br>
+      <strong>Class:</strong> 10A<br>
+      <strong>Mentor:</strong> Mentor_A<br>
+      <strong>Risk band:</strong> <span class="risk-high">High</span><br>
+      <strong>Score:</strong> 7<br>
+      <strong>Reasons:</strong> Attendance &lt; 75%; Unpaid fees<br>
+      <button class="download-btn" style="margin-top:10px;">Send Notification Email</button>
+    </div>
+    <input type="file" id="csvFileInput" accept=".csv" style="margin:20px 0;">
+    <div class="student-input-form" style="margin: 30px 0; background: #f1f5f9; border-radius: 12px; padding: 24px 20px; box-shadow: 0 2px 8px #0001;">
+      <h3 style="margin-top:0;">Add Student Data</h3>
+      <form id="add-student-form" style="display: flex; flex-wrap: wrap; gap: 18px; align-items: flex-end;">
+        <div><label>ID<br><input type="text" name="ID" required style="width:120px;"></label></div>
+        <div><label>Name<br><input type="text" name="Name" required style="width:140px;"></label></div>
+        <div><label>Class<br><input type="text" name="Class" required style="width:80px;"></label></div>
+        <div><label>Mentor<br><input type="text" name="Mentor" required style="width:110px;"></label></div>
+        <div><label>Risk Band<br>
+          <select name="Risk Band" required style="width:100px;">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </label></div>
+        <div><label>Score<br><input type="number" name="Score" min="0" max="10" required style="width:70px;"></label></div>
+        <div><label>Attendance (%)<br><input type="number" name="Attendance(%)" min="0" max="100" required style="width:90px;"></label></div>
+        <div><label>Avg Score<br><input type="number" name="Avg Score" min="0" max="10" required style="width:70px;"></label></div>
+        <div><label>Unpaid<br><input type="text" name="Unpaid" style="width:70px;"></label></div>
+        <div style="flex:1 1 100%;"><label>Reasons<br><input type="text" name="Reasons" style="width:100%;"></label></div>
+        <button type="submit" class="download-btn" style="margin-top:0;">Add Student</button>
+      </form>
+    </div>
+    <iframe src="http://localhost:8501" width="100%" height="600" style="border:none;border-radius:12px;"></iframe>
+  </div>
+  <script>
+    // Simple login/signup logic (no backend, demo only)
+    const loginPage = document.getElementById('login-page');
+    const dashboardSidebar = document.getElementById('dashboard-sidebar');
+    const dashboardContainer = document.getElementById('dashboard-container');
+    const loginForm = document.getElementById('login-form');
+    const signupForm = document.getElementById('signup-form');
+    const showSignup = document.getElementById('show-signup');
+    const showLogin = document.getElementById('show-login');
+    // Switch to sign up
+    showSignup.addEventListener('click', function(e) {
+      e.preventDefault();
+      loginForm.style.display = 'none';
+      signupForm.style.display = 'flex';
+      document.getElementById('login-error').style.display = 'none';
+    });
+    // Switch to login
+    showLogin.addEventListener('click', function(e) {
+      e.preventDefault();
+      signupForm.style.display = 'none';
+      loginForm.style.display = 'flex';
+      document.getElementById('signup-error').style.display = 'none';
+    });
+    // Store users in localStorage (demo only, not secure)
+    function getUsers() {
+      const users = localStorage.getItem('dashboardUsers');
+      return users ? JSON.parse(users) : [{username:'admin',password:'admin123'}];
+    }
+    function saveUsers(users) {
+      localStorage.setItem('dashboardUsers', JSON.stringify(users));
+    }
+    // Login handler
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+      const users = getUsers();
+      const found = users.find(u => u.username === username && u.password === password);
+      if (found) {
+        loginPage.style.display = 'none';
+        dashboardSidebar.style.display = '';
+        dashboardContainer.style.display = '';
+      } else {
+        const err = document.getElementById('login-error');
+        err.textContent = 'Invalid username or password.';
+        err.style.display = 'block';
+      }
+    });
+    // Signup handler
+    signupForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('signup-username').value.trim();
+      const password = document.getElementById('signup-password').value;
+      if (!username || !password) return;
+      let users = getUsers();
+      if (users.find(u => u.username === username)) {
+        const err = document.getElementById('signup-error');
+        err.textContent = 'Username already exists.';
+        err.style.display = 'block';
+        return;
+      }
+      users.push({username, password});
+      saveUsers(users);
+      signupForm.reset();
+      signupForm.style.display = 'none';
+      loginForm.style.display = 'flex';
+      document.getElementById('signup-error').style.display = 'none';
+      alert('Sign up successful! Please log in.');
+    });
+    // --- Chart.js Graphs ---
+    // Helper: get table data as array of objects
+    function getTableData() {
+      const rows = Array.from(document.querySelectorAll('#students-table-body tr'));
+      return rows.map(tr => {
+        const tds = tr.querySelectorAll('td');
+        return {
+          ID: tds[0]?.textContent,
+          Name: tds[1]?.textContent,
+          Class: tds[2]?.textContent,
+          Mentor: tds[3]?.textContent,
+          RiskBand: tds[4]?.textContent,
+          Score: Number(tds[5]?.textContent),
+          Attendance: Number(tds[6]?.textContent),
+          AvgScore: Number(tds[7]?.textContent),
+          Unpaid: tds[8]?.textContent,
+          Reasons: tds[9]?.textContent
+        };
+      });
+    }
+
+    // Insert chart containers after KPIs
+    window.addEventListener('DOMContentLoaded', function() {
+      const chartSection = document.createElement('div');
+      chartSection.innerHTML = `
+        <h2 style="margin-top:36px;">Visualizations</h2>
+        <div style="display:flex;gap:32px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:320px;max-width:480px;background:#f8fafc;padding:18px 18px 8px 18px;border-radius:12px;box-shadow:0 2px 8px #0001;">
+            <canvas id="riskPieChart" height="220"></canvas>
+          </div>
+          <div style="flex:1;min-width:320px;max-width:480px;background:#f8fafc;padding:18px 18px 8px 18px;border-radius:12px;box-shadow:0 2px 8px #0001;">
+            <canvas id="attendanceBarChart" height="220"></canvas>
+          </div>
+        </div>
+      `;
+      const container = document.getElementById('dashboard-container');
+      // Insert after KPI row
+      const kpiRow = container.querySelector('.kpi-row');
+      kpiRow.insertAdjacentElement('afterend', chartSection);
+      updateCharts();
+    });
+
+    // Chart.js chart instances
+    let riskPieChart, attendanceBarChart;
+
+    function updateCharts() {
+      const data = getTableData();
+      // Pie chart: Risk Band distribution
+      const riskCounts = {High:0, Medium:0, Low:0};
+      data.forEach(d => { if(riskCounts[d.RiskBand]!==undefined) riskCounts[d.RiskBand]++; });
+      const pieData = {
+        labels: ['High', 'Medium', 'Low'],
+        datasets: [{
+          data: [riskCounts.High, riskCounts.Medium, riskCounts.Low],
+          backgroundColor: ['#dc2626','#f59e42','#22c55e'],
+        }]
+      };
+      if (riskPieChart) riskPieChart.destroy();
+      const pieCtx = document.getElementById('riskPieChart')?.getContext('2d');
+      if (pieCtx) {
+        riskPieChart = new Chart(pieCtx, {
+          type: 'pie', data: pieData,
+          options: {plugins:{legend:{position:'bottom'}}}
+        });
+      }
+      // Bar chart: Attendance by student
+      const barLabels = data.map(d=>d.Name);
+      const barData = data.map(d=>d.Attendance);
+      if (attendanceBarChart) attendanceBarChart.destroy();
+      const barCtx = document.getElementById('attendanceBarChart')?.getContext('2d');
+      if (barCtx) {
+        attendanceBarChart = new Chart(barCtx, {
+          type: 'bar',
+          data: {labels: barLabels, datasets:[{label:'Attendance (%)', data:barData, backgroundColor:'#6366f1'}]},
+          options: {scales:{y:{beginAtZero:true,max:100}},plugins:{legend:{display:false}}}
+        });
+      }
+    }
+    document.getElementById('add-student-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const row = {
+        ID: form.ID.value,
+        Name: form.Name.value,
+        Class: form.Class.value,
+        Mentor: form.Mentor.value,
+        'Risk Band': form['Risk Band'].value,
+        Score: form.Score.value,
+        'Attendance(%)': form['Attendance(%)'].value,
+        'Avg Score': form['Avg Score'].value,
+        Unpaid: form.Unpaid.value,
+        Reasons: form.Reasons.value
+      };
+      const tbody = document.getElementById('students-table-body');
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${row.ID}</td>
+        <td>${row.Name}</td>
+        <td>${row.Class}</td>
+        <td>${row.Mentor}</td>
+        <td class="${row['Risk Band']==='High'?'risk-high':row['Risk Band']==='Medium'?'risk-medium':'risk-low'}">${row['Risk Band']}</td>
+        <td>${row.Score}</td>
+        <td>${row['Attendance(%)']}</td>
+        <td>${row['Avg Score']}</td>
+        <td>${row.Unpaid}</td>
+        <td>${row.Reasons}</td>
+      `;
+  tbody.appendChild(tr);
+  form.reset();
+  updateCharts();
+    });
+    // Sample JavaScript to handle filter changes and update KPIs
+  // Hide dashboard by default until login
+  dashboardSidebar.style.display = 'none';
+  dashboardContainer.style.display = 'none';
+  // Show dashboard after login (see login-form submit above)
+  document.getElementById('class-filter').addEventListener('change', function() {
+      // Logic to update student table and KPIs based on selected class
+    });
+    document.getElementById('mentor-filter').addEventListener('change', function() {
+      // Logic to update student table and KPIs based on selected mentor
+    });
+    document.getElementById('risk-filter').addEventListener('change', function() {
+      // Logic to update student table and KPIs based on selected risk level
+    });
+
+    function parseCSV(text) {
+      const lines = text.trim().split('\n');
+      const headers = lines[0].split(',');
+      return lines.slice(1).map(line => {
+        const values = line.split(',');
+        let obj = {};
+        headers.forEach((h, i) => obj[h.trim()] = values[i] ? values[i].trim() : '');
+        return obj;
+      });
+    }
+
+    document.getElementById('csvFileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const rows = parseCSV(e.target.result);
+        const tbody = document.getElementById('students-table-body');
+        tbody.innerHTML = '';
+        rows.forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${row.ID}</td>
+            <td>${row.Name}</td>
+            <td>${row.Class}</td>
+            <td>${row.Mentor}</td>
+            <td class="${row['Risk Band']==='High'?'risk-high':row['Risk Band']==='Medium'?'risk-medium':'risk-low'}">${row['Risk Band']}</td>
+            <td>${row.Score}</td>
+            <td>${row['Attendance(%)']}</td>
+            <td>${row['Avg Score']}</td>
+            <td>${row.Unpaid}</td>
+            <td>${row.Reasons}</td>
+          `;
+          tbody.appendChild(tr);
+  });
+  updateCharts();
+      };
+      reader.readAsText(file);
+    });
+  </script>
+</body>
+</html>

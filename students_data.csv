@@ -1,0 +1,121 @@
+registration_number,name,fee_status,age,contact_info,degree,program,semester,batch,daily_attendance,subject_attendance,attendance_trends,assessment_scores,subject_performance,avg_score,gpa,assignment_patterns,num_attempts,background,prev_academic_history,payment_history,outstanding_dues,mentor_id
+REG001,John,Paid,21,john@example.com,BSc,BSc CS,3,2023,80,85,Improving,85,90,78,3.5,Good,1,Good,Excellent,Paid,0,Mentor_A
+REG002,Jane,Paid,22,jane@example.com,BA,BA Eng,2,2023,90,88,Stable,88,92,82,3.7,Excellent,1,Excellent,Good,Paid,0,Mentor_B
+REG003,Bob,Pending,23,bob@example.com,BCom,BCom,4,2022,70,60,Declining,60,65,55,2.8,Average,2,Average,Poor,Partial,500,Mentor_C
+REG004,Alice,Paid,19,alice@example.com,MSc,MSc CS,1,2023,95,92,Improving,92,95,88,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_D
+REG005,Charlie,Pending,24,charlie@example.com,MA,MA Eng,5,2021,60,55,Declining,55,60,50,2.5,Poor,3,Poor,Average,Unpaid,800,Mentor_E
+REG006,David,Paid,20,david@example.com,PhD,PhD,6,2020,85,80,Stable,80,85,75,3.2,Good,2,Good,Good,Paid,0,Mentor_A
+REG007,Eve,Pending,21,eve@example.com,BSc,BSc CS,3,2023,75,70,Improving,70,75,70,3.0,Average,1,Average,Good,Partial,200,Mentor_B
+REG008,Frank,Paid,22,frank@example.com,BA,BA Eng,4,2022,88,85,Stable,85,88,80,3.6,Good,1,Good,Excellent,Paid,0,Mentor_C
+REG009,Grace,Pending,25,grace@example.com,BCom,BCom,2,2023,65,60,Declining,60,65,55,2.7,Average,2,Average,Poor,Unpaid,600,Mentor_D
+REG010,Hannah,Paid,18,hannah@example.com,MSc,MSc CS,1,2023,92,90,Improving,90,92,85,3.8,Excellent,1,Excellent,Excellent,Paid,0,Mentor_E
+REG011,Ian,Pending,23,ian@example.com,MA,MA Eng,5,2021,55,50,Declining,50,55,45,2.2,Poor,3,Poor,Average,Unpaid,900,Mentor_A
+REG012,Jack,Paid,20,jack@example.com,PhD,PhD,5,2021,80,75,Stable,75,80,72,3.1,Good,2,Good,Good,Paid,0,Mentor_B
+REG013,Kate,Pending,21,kate@example.com,BSc,BSc CS,2,2023,82,78,Improving,78,82,76,3.4,Good,1,Good,Excellent,Partial,100,Mentor_C
+REG014,Luke,Paid,24,luke@example.com,BA,BA Eng,4,2022,90,87,Stable,87,90,83,3.7,Excellent,1,Excellent,Good,Paid,0,Mentor_D
+REG015,Maya,Pending,19,maya@example.com,BCom,BCom,1,2023,68,63,Declining,63,68,58,2.9,Average,2,Average,Poor,Unpaid,400,Mentor_E
+REG016,Nathan,Paid,22,nathan@example.com,MSc,MSc CS,3,2022,94,91,Improving,91,94,87,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_A
+REG017,Olivia,Pending,25,olivia@example.com,MA,MA Eng,5,2021,58,53,Declining,53,58,48,2.4,Poor,3,Poor,Average,Unpaid,700,Mentor_B
+REG018,Paul,Paid,20,paul@example.com,PhD,PhD,6,2020,83,79,Stable,79,83,74,3.3,Good,2,Good,Good,Paid,0,Mentor_C
+REG019,Quinn,Pending,21,quinn@example.com,BSc,BSc CS,3,2023,77,72,Improving,72,77,71,3.1,Average,1,Average,Good,Partial,300,Mentor_D
+REG020,Rachel,Paid,23,rachel@example.com,BA,BA Eng,2,2023,89,86,Stable,86,89,81,3.6,Good,1,Good,Excellent,Paid,0,Mentor_E
+REG021,Sam,Pending,24,sam@example.com,BCom,BCom,4,2022,66,61,Declining,61,66,56,2.8,Average,2,Average,Poor,Unpaid,500,Mentor_A
+REG022,Tina,Paid,18,tina@example.com,MSc,MSc CS,1,2023,93,89,Improving,89,93,86,3.8,Excellent,1,Excellent,Excellent,Paid,0,Mentor_B
+REG023,Ursula,Pending,25,ursula@example.com,MA,MA Eng,3,2022,57,52,Declining,52,57,47,2.3,Poor,3,Poor,Average,Unpaid,800,Mentor_C
+REG024,Victor,Paid,20,victor@example.com,PhD,PhD,5,2021,81,76,Stable,76,81,73,3.2,Good,2,Good,Good,Paid,0,Mentor_D
+REG025,Wendy,Pending,21,wendy@example.com,BSc,BSc CS,2,2023,84,80,Improving,80,84,77,3.5,Good,1,Good,Excellent,Partial,150,Mentor_E
+REG026,Xander,Paid,22,xander@example.com,BA,BA Eng,4,2022,91,88,Stable,88,91,84,3.7,Excellent,1,Excellent,Good,Paid,0,Mentor_A
+REG027,Yara,Pending,19,yara@example.com,BCom,BCom,1,2023,69,64,Declining,64,69,59,2.9,Average,2,Average,Poor,Unpaid,450,Mentor_B
+REG028,Zane,Paid,24,zane@example.com,MSc,MSc CS,3,2022,95,92,Improving,92,95,88,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_C
+REG029,Abby,Pending,20,abby@example.com,MA,MA Eng,5,2021,59,54,Declining,54,59,49,2.4,Poor,3,Poor,Average,Unpaid,750,Mentor_D
+REG030,Ben,Paid,21,ben@example.com,PhD,PhD,6,2020,82,77,Stable,77,82,74,3.3,Good,2,Good,Good,Paid,0,Mentor_E
+REG031,Cara,Pending,23,cara@example.com,BSc,BSc CS,3,2023,78,73,Improving,73,78,72,3.2,Average,1,Average,Good,Partial,250,Mentor_A
+REG032,Dan,Paid,22,dan@example.com,BA,BA Eng,2,2023,87,84,Stable,84,87,79,3.5,Good,1,Good,Excellent,Paid,0,Mentor_B
+REG033,Ella,Pending,25,ella@example.com,BCom,BCom,4,2022,67,62,Declining,62,67,57,2.8,Average,2,Average,Poor,Unpaid,550,Mentor_C
+REG034,Finn,Paid,18,finn@example.com,MSc,MSc CS,1,2023,94,90,Improving,90,94,87,3.8,Excellent,1,Excellent,Excellent,Paid,0,Mentor_D
+REG035,Gina,Pending,24,gina@example.com,MA,MA Eng,3,2022,56,51,Declining,51,56,46,2.3,Poor,3,Poor,Average,Unpaid,850,Mentor_E
+REG036,Harry,Paid,20,harry@example.com,PhD,PhD,5,2021,79,74,Stable,74,79,71,3.1,Good,2,Good,Good,Paid,0,Mentor_A
+REG037,Iris,Pending,21,iris@example.com,BSc,BSc CS,2,2023,85,81,Improving,81,85,78,3.6,Good,1,Good,Excellent,Partial,120,Mentor_B
+REG038,Jason,Paid,23,jason@example.com,BA,BA Eng,4,2022,92,89,Stable,89,92,85,3.8,Excellent,1,Excellent,Good,Paid,0,Mentor_C
+REG039,Kira,Pending,19,kira@example.com,BCom,BCom,1,2023,70,65,Declining,65,70,60,3.0,Average,2,Average,Poor,Unpaid,350,Mentor_D
+REG040,Leo,Paid,25,leo@example.com,MSc,MSc CS,3,2022,96,93,Improving,93,96,89,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_E
+REG041,Mia,Pending,20,mia@example.com,MA,MA Eng,5,2021,60,55,Declining,55,60,50,2.5,Poor,3,Poor,Average,Unpaid,650,Mentor_A
+REG042,Noah,Paid,21,noah@example.com,PhD,PhD,6,2020,83,78,Stable,78,83,75,3.4,Good,2,Good,Good,Paid,0,Mentor_B
+REG043,Olga,Pending,24,olga@example.com,BSc,BSc CS,3,2023,76,71,Improving,71,76,69,3.0,Average,1,Average,Good,Partial,280,Mentor_C
+REG044,Peter,Paid,22,peter@example.com,BA,BA Eng,2,2023,88,85,Stable,85,88,80,3.6,Good,1,Good,Excellent,Paid,0,Mentor_D
+REG045,Rosa,Pending,19,rosa@example.com,BCom,BCom,4,2022,68,63,Declining,63,68,58,2.9,Average,2,Average,Poor,Unpaid,480,Mentor_E
+REG046,Steve,Paid,25,steve@example.com,MSc,MSc CS,1,2023,93,89,Improving,89,93,86,3.8,Excellent,1,Excellent,Excellent,Paid,0,Mentor_A
+REG047,Tara,Pending,20,tara@example.com,MA,MA Eng,3,2022,57,52,Declining,52,57,47,2.4,Poor,3,Poor,Average,Unpaid,720,Mentor_B
+REG048,Ulysses,Paid,21,ulysses@example.com,PhD,PhD,5,2021,80,75,Stable,75,80,72,3.2,Good,2,Good,Good,Paid,0,Mentor_C
+REG049,Vicky,Pending,23,vicky@example.com,BSc,BSc CS,2,2023,86,82,Improving,82,86,79,3.7,Good,1,Good,Excellent,Partial,180,Mentor_D
+REG050,Will,Paid,22,will@example.com,BA,BA Eng,4,2022,89,86,Stable,86,89,81,3.6,Excellent,1,Excellent,Good,Paid,0,Mentor_E
+REG051,Xena,Pending,18,xena@example.com,BCom,BCom,1,2023,71,66,Declining,66,71,61,3.0,Average,2,Average,Poor,Unpaid,420,Mentor_A
+REG052,Yuri,Paid,24,yuri@example.com,MSc,MSc CS,3,2022,97,94,Improving,94,97,90,4.0,Excellent,1,Excellent,Excellent,Paid,0,Mentor_B
+REG053,Zara,Pending,20,zara@example.com,MA,MA Eng,5,2021,61,56,Declining,56,61,51,2.5,Poor,3,Poor,Average,Unpaid,680,Mentor_C
+REG054,Adam,Paid,21,adam@example.com,PhD,PhD,6,2020,84,79,Stable,79,84,76,3.5,Good,2,Good,Good,Paid,0,Mentor_D
+REG055,Becca,Pending,25,becca@example.com,BSc,BSc CS,3,2023,74,69,Improving,69,74,67,2.9,Average,1,Average,Good,Partial,320,Mentor_E
+REG056,Chris,Paid,19,chris@example.com,BA,BA Eng,2,2023,90,87,Stable,87,90,82,3.7,Good,1,Good,Excellent,Paid,0,Mentor_A
+REG057,Diana,Pending,23,diana@example.com,BCom,BCom,4,2022,69,64,Declining,64,69,59,2.9,Average,2,Average,Poor,Unpaid,520,Mentor_B
+REG058,Edgar,Paid,20,edgar@example.com,MSc,MSc CS,1,2023,95,91,Improving,91,95,87,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_C
+REG059,Faye,Pending,24,faye@example.com,MA,MA Eng,3,2022,58,53,Declining,53,58,48,2.4,Poor,3,Poor,Average,Unpaid,760,Mentor_D
+REG060,George,Paid,21,george@example.com,PhD,PhD,5,2021,81,76,Stable,76,81,73,3.3,Good,2,Good,Good,Paid,0,Mentor_E
+REG061,Helen,Pending,22,helen@example.com,BSc,BSc CS,2,2023,87,83,Improving,83,87,80,3.8,Good,1,Good,Excellent,Partial,140,Mentor_A
+REG062,Ivan,Paid,18,ivan@example.com,BA,BA Eng,4,2022,91,88,Stable,88,91,83,3.7,Excellent,1,Excellent,Good,Paid,0,Mentor_B
+REG063,Julia,Pending,25,julia@example.com,BCom,BCom,1,2023,72,67,Declining,67,72,62,3.1,Average,2,Average,Poor,Unpaid,380,Mentor_C
+REG064,Kevin,Paid,20,kevin@example.com,MSc,MSc CS,3,2022,98,95,Improving,95,98,91,4.0,Excellent,1,Excellent,Excellent,Paid,0,Mentor_D
+REG065,Lisa,Pending,21,lisa@example.com,MA,MA Eng,5,2021,62,57,Declining,57,62,52,2.6,Poor,3,Poor,Average,Unpaid,710,Mentor_E
+REG066,Mike,Paid,23,mike@example.com,PhD,PhD,6,2020,85,80,Stable,80,85,77,3.6,Good,2,Good,Good,Paid,0,Mentor_A
+REG067,Nora,Pending,19,nora@example.com,BSc,BSc CS,3,2023,75,70,Improving,70,75,68,3.0,Average,1,Average,Good,Partial,260,Mentor_B
+REG068,Oscar,Paid,24,oscar@example.com,BA,BA Eng,2,2023,89,86,Stable,86,89,81,3.6,Good,1,Good,Excellent,Paid,0,Mentor_C
+REG069,Pat,Pending,20,pat@example.com,BCom,BCom,4,2022,70,65,Declining,65,70,60,3.0,Average,2,Average,Poor,Unpaid,440,Mentor_D
+REG070,Quincy,Paid,25,quincy@example.com,MSc,MSc CS,1,2023,96,92,Improving,92,96,88,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_E
+REG071,Rita,Pending,21,rita@example.com,MA,MA Eng,3,2022,59,54,Declining,54,59,49,2.4,Poor,3,Poor,Average,Unpaid,690,Mentor_A
+REG072,Simon,Paid,22,simon@example.com,PhD,PhD,5,2021,82,77,Stable,77,82,74,3.4,Good,2,Good,Good,Paid,0,Mentor_B
+REG073,Tom,Pending,18,tom@example.com,BSc,BSc CS,2,2023,88,84,Improving,84,88,81,3.9,Good,1,Good,Excellent,Partial,160,Mentor_C
+REG074,Una,Paid,24,una@example.com,BA,BA Eng,4,2022,92,89,Stable,89,92,84,3.8,Excellent,1,Excellent,Good,Paid,0,Mentor_D
+REG075,Vera,Pending,20,vera@example.com,BCom,BCom,1,2023,73,68,Declining,68,73,63,3.1,Average,2,Average,Poor,Unpaid,410,Mentor_E
+REG076,Walter,Paid,21,walter@example.com,MSc,MSc CS,3,2022,99,96,Improving,96,99,92,4.0,Excellent,1,Excellent,Excellent,Paid,0,Mentor_A
+REG077,Xavier,Pending,23,xavier@example.com,MA,MA Eng,5,2021,63,58,Declining,58,63,53,2.6,Poor,3,Poor,Average,Unpaid,730,Mentor_B
+REG078,Yasmin,Paid,19,yasmin@example.com,PhD,PhD,6,2020,86,81,Stable,81,86,78,3.7,Good,2,Good,Good,Paid,0,Mentor_C
+REG079,Ziggy,Pending,25,ziggy@example.com,BSc,BSc CS,3,2023,76,71,Improving,71,76,69,3.1,Average,1,Average,Good,Partial,290,Mentor_D
+REG080,Alan,Paid,20,alan@example.com,BA,BA Eng,2,2023,90,87,Stable,87,90,82,3.7,Good,1,Good,Excellent,Paid,0,Mentor_E
+REG081,Betty,Pending,21,betty@example.com,BCom,BCom,4,2022,71,66,Declining,66,71,61,3.0,Average,2,Average,Poor,Unpaid,460,Mentor_A
+REG082,Cathy,Paid,24,cathy@example.com,MSc,MSc CS,1,2023,97,93,Improving,93,97,89,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_B
+REG083,Derek,Pending,18,derek@example.com,MA,MA Eng,3,2022,60,55,Declining,55,60,50,2.5,Poor,3,Poor,Average,Unpaid,740,Mentor_C
+REG084,Ellen,Paid,22,ellen@example.com,PhD,PhD,5,2021,83,78,Stable,78,83,75,3.5,Good,2,Good,Good,Paid,0,Mentor_D
+REG085,Frankie,Pending,19,frankie@example.com,BSc,BSc CS,2,2023,89,85,Improving,85,89,82,3.8,Good,1,Good,Excellent,Partial,130,Mentor_E
+REG086,Gloria,Paid,25,gloria@example.com,BA,BA Eng,4,2022,93,90,Stable,90,93,85,3.8,Excellent,1,Excellent,Good,Paid,0,Mentor_A
+REG087,Henry,Pending,20,henry@example.com,BCom,BCom,1,2023,74,69,Declining,69,74,64,3.2,Average,2,Average,Poor,Unpaid,390,Mentor_B
+REG088,Irene,Paid,21,irene@example.com,MSc,MSc CS,3,2022,100,97,Improving,97,100,93,4.0,Excellent,1,Excellent,Excellent,Paid,0,Mentor_C
+REG089,Jerry,Pending,23,jerry@example.com,MA,MA Eng,5,2021,64,59,Declining,59,64,54,2.7,Poor,3,Poor,Average,Unpaid,770,Mentor_D
+REG090,Kelly,Paid,24,kelly@example.com,PhD,PhD,6,2020,87,82,Stable,82,87,79,3.8,Good,2,Good,Good,Paid,0,Mentor_E
+REG091,Larry,Pending,18,larry@example.com,BSc,BSc CS,3,2023,77,72,Improving,72,77,70,3.2,Average,1,Average,Good,Partial,270,Mentor_A
+REG092,Molly,Paid,20,molly@example.com,BA,BA Eng,2,2023,91,88,Stable,88,91,83,3.7,Good,1,Good,Excellent,Paid,0,Mentor_B
+REG093,Nancy,Pending,25,nancy@example.com,BCom,BCom,4,2022,72,67,Declining,67,72,62,3.1,Average,2,Average,Poor,Unpaid,430,Mentor_C
+REG094,Owen,Paid,19,owen@example.com,MSc,MSc CS,1,2023,98,94,Improving,94,98,90,4.0,Excellent,1,Excellent,Excellent,Paid,0,Mentor_D
+REG095,Paula,Pending,21,paula@example.com,MA,MA Eng,3,2022,61,56,Declining,56,61,51,2.5,Poor,3,Poor,Average,Unpaid,780,Mentor_E
+REG096,Ray,Paid,22,ray@example.com,PhD,PhD,5,2021,84,79,Stable,79,84,76,3.6,Good,2,Good,Good,Paid,0,Mentor_A
+REG097,Sarah,Pending,24,sarah@example.com,BSc,BSc CS,2,2023,90,86,Improving,86,90,83,3.9,Good,1,Good,Excellent,Partial,110,Mentor_B
+REG098,Ted,Paid,20,ted@example.com,BA,BA Eng,4,2022,94,91,Stable,91,94,86,3.8,Excellent,1,Excellent,Good,Paid,0,Mentor_C
+REG099,Uma,Pending,23,uma@example.com,BCom,BCom,1,2023,75,70,Declining,70,75,65,3.2,Average,2,Average,Poor,Unpaid,360,Mentor_D
+REG100,Vin,Paid,21,vin@example.com,MSc,MSc CS,3,2022,99,95,Improving,95,99,91,4.0,Excellent,1,Excellent,Excellent,Paid,0,Mentor_E
+REG101,Wanda,Pending,25,wanda@example.com,MA,MA Eng,5,2021,65,60,Declining,60,65,55,2.7,Poor,3,Poor,Average,Unpaid,810,Mentor_A
+REG102,Xena2,Paid,18,xena2@example.com,PhD,PhD,6,2020,88,83,Stable,83,88,80,3.9,Good,2,Good,Good,Paid,0,Mentor_B
+REG103,Yuri2,Pending,22,yuri2@example.com,BSc,BSc CS,3,2023,78,73,Improving,73,78,71,3.3,Average,1,Average,Good,Partial,240,Mentor_C
+REG104,Zane2,Paid,19,zane2@example.com,BA,BA Eng,2,2023,92,89,Stable,89,92,84,3.7,Good,1,Good,Excellent,Paid,0,Mentor_D
+REG105,Abby2,Pending,24,abby2@example.com,BCom,BCom,4,2022,73,68,Declining,68,73,63,3.1,Average,2,Average,Poor,Unpaid,490,Mentor_E
+REG106,Ben2,Paid,20,ben2@example.com,MSc,MSc CS,1,2023,97,93,Improving,93,97,88,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_A
+REG107,Cara2,Pending,21,cara2@example.com,MA,MA Eng,3,2022,62,57,Declining,57,62,52,2.6,Poor,3,Poor,Average,Unpaid,720,Mentor_B
+REG108,Dan2,Paid,23,dan2@example.com,PhD,PhD,5,2021,85,80,Stable,80,85,77,3.7,Good,2,Good,Good,Paid,0,Mentor_C
+REG109,Ella2,Pending,25,ella2@example.com,BSc,BSc CS,2,2023,91,87,Improving,87,91,84,3.8,Good,1,Good,Excellent,Partial,170,Mentor_D
+REG110,Finn2,Paid,18,finn2@example.com,BA,BA Eng,4,2022,95,92,Stable,92,95,87,3.8,Excellent,1,Excellent,Good,Paid,0,Mentor_E
+REG111,Gina2,Pending,24,gina2@example.com,BCom,BCom,1,2023,76,71,Declining,71,76,66,3.2,Average,2,Average,Poor,Unpaid,400,Mentor_A
+REG112,Harry2,Paid,20,harry2@example.com,MSc,MSc CS,3,2022,98,94,Improving,94,98,89,4.0,Excellent,1,Excellent,Excellent,Paid,0,Mentor_B
+REG113,Iris2,Pending,21,iris2@example.com,MA,MA Eng,5,2021,66,61,Declining,61,66,56,2.7,Poor,3,Poor,Average,Unpaid,750,Mentor_C
+REG114,Jason2,Paid,22,jason2@example.com,PhD,PhD,6,2020,89,84,Stable,84,89,81,3.9,Good,2,Good,Good,Paid,0,Mentor_D
+REG115,Kira2,Pending,19,kira2@example.com,BSc,BSc CS,3,2023,79,74,Improving,74,79,72,3.4,Average,1,Average,Good,Partial,220,Mentor_E
+REG116,Leo2,Paid,25,leo2@example.com,BA,BA Eng,2,2023,93,90,Stable,90,93,85,3.7,Good,1,Good,Excellent,Paid,0,Mentor_A
+REG117,Mia2,Pending,20,mia2@example.com,BCom,BCom,4,2022,74,69,Declining,69,74,64,3.1,Average,2,Average,Poor,Unpaid,470,Mentor_B
+REG118,Noah2,Paid,21,noah2@example.com,MSc,MSc CS,1,2023,96,92,Improving,92,96,87,3.9,Excellent,1,Excellent,Excellent,Paid,0,Mentor_C
+REG119,Olga2,Pending,23,olga2@example.com,MA,MA Eng,3,2022,63,58,Declining,58,63,53,2.6,Poor,3,Poor,Average,Unpaid,790,Mentor_D
+REG120,Peter2,Paid,24,peter2@example.com,PhD,PhD,5,2021,86,81,Stable,81,86,78,3.8,Good,2,Good,Good,Paid,0,Mentor_E
